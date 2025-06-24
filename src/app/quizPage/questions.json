@@ -1,0 +1,67 @@
+[
+    {
+      "title": "Linguistische Intelligenz",
+      "questions": [
+        "Liest du gerne Bücher oder schreibst gerne Geschichten?",
+        "Fällt es dir leicht, dich klar auszudrücken – mündlich oder schriftlich?",
+        "Hast du ein gutes Sprachgefühl oder lernst schnell neue Sprachen?"
+      ]
+    },
+    {
+      "title": "Logisch-mathematische Intelligenz",
+      "questions": [
+        "Magst du Rätsel oder logische Denkaufgaben?",
+        "Interessierst du dich für Mathematik oder naturwissenschaftliche Themen?",
+        "Analysierst du gerne Probleme Schritt für Schritt?"
+      ]
+    },
+    {
+      "title": "Räumliche Intelligenz",
+      "questions": [
+        "Kannst du dir gut Dinge räumlich vorstellen?",
+        "Hast du ein gutes Gefühl für Karten, Baupläne oder Navigation?",
+        "Gestaltest du gerne grafisch oder visuell (z. B. Design, Kunst)?"
+      ]
+    },
+    {
+      "title": "Körperlich-kinästhetische Intelligenz",
+      "questions": [
+        "Treibst du gerne Sport oder tanzt gerne?",
+        "Arbeitest du gerne mit deinen Händen (z. B. basteln, bauen)?",
+        "Hast du ein gutes Körpergefühl oder Koordination?"
+      ]
+    },
+    {
+      "title": "Musikalische Intelligenz",
+      "questions": [
+        "Spielst du ein Instrument oder singst du gerne?",
+        "Merkst du dir Melodien oder Rhythmen schnell?",
+        "Bist du sensibel für Klang, Tonhöhe und Musik?"
+      ]
+    },
+    {
+      "title": "Interpersonale Intelligenz",
+      "questions": [
+        "Fällt es dir leicht, mit anderen Menschen in Kontakt zu treten?",
+        "Kannst du gut in Teams arbeiten oder Menschen motivieren?",
+        "Verstehst du, was andere fühlen oder denken könnten?"
+      ]
+    },
+    {
+      "title": "Intrapersonale Intelligenz",
+      "questions": [
+        "Denkst du viel über dich selbst und deine Ziele nach?",
+        "Kennst du deine Stärken und Schwächen gut?",
+        "Triffst du bewusst Entscheidungen, die zu dir passen?"
+      ]
+    },
+    {
+      "title": "Naturalistische Intelligenz",
+      "questions": [
+        "Interessierst du dich für Tiere, Pflanzen oder Naturphänomene?",
+        "Verbringst du gerne Zeit draußen in der Natur?",
+        "Kannst du verschiedene Arten gut unterscheiden oder klassifizieren?"
+      ]
+    }
+  ]
+      
