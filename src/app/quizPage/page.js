@@ -2,11 +2,26 @@
 import styles from "./quizPage.module.css";
 import questions from "./questions.json";
 import ProgressBar from "../components/progressBar/progressBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const question = questions[currentQuestion];
+
+
+  //loads currentQuestion
+  useEffect(() => {
+    const stored = localStorage.getItem("currentQuestion");
+    if (stored !== null) {
+      setCurrentQuestion(parseInt(stored));
+    }
+  }, []);
+
+
+  //saves on changes
+  useEffect(() => {
+    localStorage.setItem("currentQuestion", currentQuestion);
+  }, [currentQuestion]);
 
   return (
     <div className={styles.wrapper}>
