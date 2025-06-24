@@ -3,8 +3,11 @@ import styles from "./quizPage.module.css";
 import questions from "./questions.json";
 import ProgressBar from "../components/progressBar/progressBar";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function QuizPage() {
+  const router = useRouter();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const question = questions[currentQuestion];
 
@@ -38,6 +41,27 @@ export default function QuizPage() {
     }
   }, []);
 
+  function calculateResult(answers) {
+    const typeCounts = {};
+
+    Object.values(answers).forEach((type) => {
+      if (!typeCounts[type]) typeCounts[type] = 0;
+      typeCounts[type]++;
+    });
+
+    let topType = null;
+    let maxCount = -1;
+
+    for (const type in typeCounts) {
+      if (typeCounts[type] > maxCount) {
+        maxCount = typeCounts[type];
+        topType = type;
+      }
+    }
+
+    localStorage.setItem("quizResult", topType);
+  }
+
   return (
     <div className={styles.wrapper}>
       <ProgressBar current={currentQuestion + 1} max={questions.length} />
@@ -70,14 +94,18 @@ export default function QuizPage() {
             </button>
 
             <button
-              onClick={() =>
-                setCurrentQuestion((prev) =>
-                  Math.min(prev + 1, questions.length - 1)
-                )
-              }
-              disabled={currentQuestion === questions.length - 1}
+              onClick={() => {
+                if (currentQuestion < questions.length - 1) {
+                  setCurrentQuestion(currentQuestion + 1);
+                } else {
+                  calculateResult(answers);
+                  router.push("/endPage");
+                }
+              }}
             >
-              Weiter →
+              {currentQuestion === questions.length - 1
+                ? "Auswerten →"
+                : "Weiter →"}
             </button>
           </div>
         </div>
