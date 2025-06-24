@@ -1,10 +1,51 @@
 "use client";
-import styles from './quizPage.module.css'
-import questions from './questions.json'
+import styles from "./quizPage.module.css";
+import questions from "./questions.json";
+import ProgressBar from "../components/progressBar/progressBar";
+import { useState } from "react";
 
 export default function QuizPage() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const question = questions[currentQuestion];
+
   return (
-    <>
-    </>
+    <div className={styles.wrapper}>
+      <ProgressBar current={currentQuestion + 1} max={questions.length} />
+      <div className={styles.content}>
+        <div className={styles.card}>
+          <h2>{question.question}</h2>
+          <div className={styles.options}>
+            {question.options.map((option, i) => (
+              <label key={i} className={styles.option}>
+                <input type="radio" name={`q${currentQuestion}`} />
+                {option.text}
+              </label>
+            ))}
+          </div>
+
+          <div className={styles.nav}>
+            <button
+              onClick={() =>
+                setCurrentQuestion((prev) => Math.max(prev - 1, 0))
+              }
+              disabled={currentQuestion === 0}
+            >
+              ← Zurück
+            </button>
+
+            <button
+              onClick={() =>
+                setCurrentQuestion((prev) =>
+                  Math.min(prev + 1, questions.length - 1)
+                )
+              }
+              disabled={currentQuestion === questions.length - 1}
+            >
+              Weiter →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
