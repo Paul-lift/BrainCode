@@ -1,0 +1,199 @@
+/* Hintergrundfarbe mit einem Swisscom-inspirierten Farbverlauf */
+.bgGradient {
+  background: linear-gradient(135deg, #000000, hsl(239, 97%, 28%)); /* Swisscom-blau (#0094db) und Swisscom-rot (#ef4135) */
+}
+
+/* Kasten-Stil für den Informationstext */
+.infoBox {
+  background-color: rgb(255, 255, 255); /* Hintergrundfarbe der Box weiß */
+  padding: 2rem; /* Mehr Abstand innerhalb des Kastens */
+  border-radius: 12px;  /* Abgerundete Ecken */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.1); /* Schattierung */
+  color: rgb(0, 0, 0); /* Textfarbe auf schwarz setzen mit höherer Priorität */
+}
+
+/* Card-Stile */
+.bg-white\/95 {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 2rem; /* Mehr Abstand innerhalb der Card */
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(10px);
+}
+
+.shadow-2xl {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+  border-radius: 12px;  /* Runde Ecken für das Card-Layout */
+}
+
+/* Button-Stil mit Swisscom-Farben und Hover-Effekt */
+.button {
+  background-image: linear-gradient(to right, #000000, #0a0aa0); /* Swisscom-Farben */
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.button:hover {
+  background-image: linear-gradient(to right, #232323, #0c0cc5); /* Hover-Farben */
+}
+
+/* Styling für die Text-Icons (🧠 und ✨) */
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px; /* Größere Icons */
+  color: white;
+}
+
+/* Flexbox für die Layout-Ausrichtung */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.gap-3 {
+  gap: 24px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
+  color: violet;
+ 
+}
+
+.mt-8 {
+  margin-top: 32px;
+}
+
+/* Textstile */
+.text-white {
+  color: white;
+}
+
+.text-white\/90 {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.text-gray-800 {
+  color: #000000;
+}
+
+.text-gray-600 {
+  color: #000000;
+}
+
+.text-gray-700 {
+  color: #000000;
+}
+
+.text-blue-800 {
+  color: #2b6cb0;
+}
+
+.text-blue-700 {
+  color: #3182ce;
+}
+
+.text-green-800 {
+  color: #2f855a;
+}
+
+.text-green-700 {
+  color: #38a169;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Layout für die Cards */
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Zwei gleich große Spalten */
+  gap: 2rem;
+}
+
+/* Optimierung der Textabsätze */
+.cardDescription {
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.md\:grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gap-4 {
+  gap: 16px;
+}
+
+.my-6 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Stil für den Titel */
+.title {
+  font-size: 3.5rem; /* Größere Schrift für den Titel */
+  font-weight: bold;
+  color: white;
+  text-align: center; /* Titel zentrieren */
+  text-shadow: #000000 px; /* Schatten für bessere Lesbarkeit */
+}
