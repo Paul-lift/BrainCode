@@ -8,7 +8,6 @@ export default function QuizPage() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const question = questions[currentQuestion];
 
-
   //loads currentQuestion
   useEffect(() => {
     const stored = localStorage.getItem("currentQuestion");
@@ -17,11 +16,27 @@ export default function QuizPage() {
     }
   }, []);
 
-
-  //saves on changes
+  //saves currentQuestion on changes
   useEffect(() => {
     localStorage.setItem("currentQuestion", currentQuestion);
   }, [currentQuestion]);
+
+  const [answers, setAnswers] = useState({});
+
+  //updates answers and saves it on localstorage
+  function handleAnswer(type) {
+    const updated = { ...answers, [currentQuestion]: type };
+    setAnswers(updated);
+    localStorage.setItem("quizAnswers", JSON.stringify(updated));
+  }
+
+  //loads answers
+  useEffect(() => {
+    const saved = localStorage.getItem("quizAnswers");
+    if (saved) {
+      setAnswers(JSON.parse(saved));
+    }
+  }, []);
 
   return (
     <div className={styles.wrapper}>
@@ -32,7 +47,13 @@ export default function QuizPage() {
           <div className={styles.options}>
             {question.options.map((option, i) => (
               <label key={i} className={styles.option}>
-                <input type="radio" name={`q${currentQuestion}`} />
+                <input
+                  type="radio"
+                  name={`q${currentQuestion}`}
+                  value={option.type}
+                  checked={answers[currentQuestion] === option.type}
+                  onChange={() => handleAnswer(option.type)}
+                />
                 {option.text}
               </label>
             ))}
